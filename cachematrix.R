@@ -1,15 +1,17 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Implements functions for cached computation of matrix inverse for a given input matrix 'x'
 
-## Write a short comment describing this function
+## get and/or set the values of the cached input 'x' and the cached inverse of 'x'
 
 makeCacheMatrix <- function(x = matrix()) {
+        ## get and set functions for the input matrix 'x'
         m <- NULL
         set <- function(y) {
           x <<- y
           m <<- NULL
         }
         get <- function() x
+        
+        ## get and set functions for the inverse of the input matrix
         setinverse <- function(inverse) m <<- inverse
         getinverse <- function() m
         list(set = set, get = get,
